@@ -34,7 +34,15 @@ namespace FileExplorer
 
         static void Main(string[] args)
         {
-            DirectoryData dirData = new DirectoryData("D:\\Users\\winpx\\downloads\\TestData");
+
+            string dirName;
+            Console.WriteLine("Input directory name:");
+            do
+            {
+                dirName = Console.ReadLine();
+            } while (!Directory.Exists(dirName));
+
+            DirectoryData dirData = new DirectoryData(dirName);
             foreach (var data in dirData.getFileDatas())
             {
                 //Console.WriteLine(data);
